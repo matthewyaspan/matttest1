@@ -1,6 +1,6 @@
 setwd("Downloads/") ## SET THIS TO YOUR WORKING DIRECTORY. THAT DIRECTORY OUGHT TO HAVE `all2001.csv` IN IT!!!
 library(tidyverse) 
-all.2001 <- read_csv("all2001.csv")
+all.2001 <- read_csv(file.choose())
 
 ### Find descriptions of the fields of events files here: https://www.retrosheet.org/datause.txt
 
@@ -98,5 +98,5 @@ all.2001 %>%
 
 library(Lahman)
 data("Master")
-all.2001 %>% inner_join(Master, by=c("POS5_FLD_ID" = "retroID")) %>% filter(nameFirst == "Troy") %>% nrow()
+all.2001 %>% inner_join(Master, by=c("POS5_FLD_ID" = "retroID")) %>% filter(nameFirst == "Tony") %>% nrow()
 
